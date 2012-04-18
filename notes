@@ -1,0 +1,11 @@
+
+- html patch
+- other patch email client issues (outlook, line-wrapping, mime, base64, wierd extra spaces, tabs to spaces, etc.)
+- patch does not apply
+- patch does not build
+- multiple patches with no ordering indicated
+- patch made against unknown tree
+- patch made against old kernel tree
+- ask me to pull random git trees with no description of what is in them
+- multi-patch series that breaks the build half way through the series
+
