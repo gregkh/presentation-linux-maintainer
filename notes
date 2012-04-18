@@ -1,6 +1,9 @@
 
+Ways to piss off a maintainer with patches you send them:
+
 - html patch
-- other patch email client issues (outlook, line-wrapping, mime, base64, wierd extra spaces, tabs to spaces, etc.)
+- other patch email client issues (outlook, line-wrapping, mime, base64,
+  wierd extra spaces, tabs to spaces, etc.)
 - patch does not apply
 - patch does not build
 - multiple patches with no ordering indicated
