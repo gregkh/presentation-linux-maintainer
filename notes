@@ -1,4 +1,3 @@
-
 Ways to piss off a maintainer with patches you send them:
 
 - html patch
@@ -11,7 +10,31 @@ Ways to piss off a maintainer with patches you send them:
 - patch made against old kernel tree
 - ask me to pull random git trees with no description of what is in them
 - multi-patch series that breaks the build half way through the series
-- patches that blindly do checkpatch cleanups without realizing what they are fixing
+- patches that blindly do checkpatch cleanups without realizing what
+  they are fixing
 - patches that do more than one thing in the patch
-- fixes for compiler warnings that are due to old versions of gcc not being smart (hint, upgrade your version of gcc)
+- fixes for compiler warnings that are due to old versions of gcc not
+  being smart (hint, upgrade your version of gcc)
 
+
+(from my long-running series of how to piss off a maintainer)
+- sent patches to a different maintainer to try to route around you
+  (luckily, doesn't happen much anymore)
+- send patches with wrong 'offset' requiring them to be edited by hand
+- ignore coding style issues
+- send patches that depend on others to work or apply properly, yet
+  never mention this
+- patches add new compiler warnings
+- patches that oops when run, and were obviously not tested
+- paper over kernel warning messages by providing empty callback
+  functions (the kernel was making those warnings for a good reason, are
+  you smarter than the kernel?  Really?)
+- description of patch is opposite of what the patch actually did.
+- multiple patches sent with exact same subject
+- patches to clean up coding style issues that add new coding style warnings
+- patches asked for review, yet obviously never even run through our
+  automated review tools
+- constant emails asking why you haven't applied their 117-patch series
+  they sent out yesterday. Emails sent in html format and not to the
+  mailing list
+- private emails not sent to mailing lists
