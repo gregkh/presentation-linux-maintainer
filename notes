@@ -38,3 +38,11 @@ Ways to piss off a maintainer with patches you send them:
   they sent out yesterday. Emails sent in html format and not to the
   mailing list
 - private emails not sent to mailing lists
+
+
+Stable patch specific review rants:
+- patches sent with the wrong upstream git commit id in them.
+- patches that differ in major ways from the upstream patch without saying that they are different
+- patches sent with no information on what stable kernel they should be applied to
+- patches sent with no git commit id
+- patches that obviously do not meet the stable_kernel_rules.txt rules (spelling fixes for comments? You have got to be kidding me...)
