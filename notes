@@ -11,4 +11,7 @@ Ways to piss off a maintainer with patches you send them:
 - patch made against old kernel tree
 - ask me to pull random git trees with no description of what is in them
 - multi-patch series that breaks the build half way through the series
+- patches that blindly do checkpatch cleanups without realizing what they are fixing
+- patches that do more than one thing in the patch
+- fixes for compiler warnings that are due to old versions of gcc not being smart (hint, upgrade your version of gcc)
 
