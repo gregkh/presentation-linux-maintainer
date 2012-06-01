@@ -1,0 +1,38 @@
+Kernel maintainers - what they do, want, etc...
+
+
+Last year, 3000 developers and 373 companies contributed to the kernel, the largest software project ever.
+
+Here's the picture of how things work, 3000 developers, 700 maintainers, 130 subsystem maintainers.
+
+5.xx changes a year
+
+7.xx changes last release!
+
+I've given lots of talks over the years about how to become a developer,
+how to get involved, and what to do.  But what about those 700
+maintainers?  What do they do?  What are they looking for when you send
+them a patch?
+
+Push/pull.  Every patch you send a maintainer increases their workload,
+testing, support, and responsibility.  We review and accept thousands of
+patches every year, keeping that rate of change going.
+
+
+Make it impossible for me to reject your patch.
+
+ - proper coding style
+ - checkpatch.pl clean
+ - proper people and mailing lists cc:ed (get_maintainer.pl)
+ - proper subject
+ - small incremental change
+ - "obviously" correct
+ - good description of WHY the patch is needed
+
+
+
+What you should expect of a maintainerr
+  - respond to the patch in 1-2 weeks (longer if in middle of merge
+    window, or if at conferences.)
+  - offer constructuve criticism of the patch
+  - 
