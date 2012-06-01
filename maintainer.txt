@@ -1,25 +1,143 @@
 Kernel maintainers - what they do, want, etc...
 
 
-Last year, 3000 developers and 373 companies contributed to the kernel, the largest software project ever.
+Last year, from the 3.0 to the 3.4 kernel release, the Linux kernel had we had
+2,833 developers from 373 different companies.
 
-Here's the picture of how things work, 3000 developers, 700 maintainers, 130 subsystem maintainers.
+For that year work of development, we went at 5.xx changes per hour, 24
+hours a day, 7 days a week.
 
-5.xx changes a year
+For just this last release, we applied patches at an average of 7.21 changes
+per hour, the fastest rate of change we have ever had.
 
-7.xx changes last release!
+That's a huge rate of change, and this is just the number of patches we
+have applied, not all of the patches that are rejected.  And if you have
+ever submitted a kernel patch, you know how hard it can be to get a patch
+accepted.
 
-I've given lots of talks over the years about how to become a developer,
-how to get involved, and what to do.  But what about those 700
-maintainers?  What do they do?  What are they looking for when you send
-them a patch?
+Here's a picture of our development model, in a simplified form.
 
-Push/pull.  Every patch you send a maintainer increases their workload,
-testing, support, and responsibility.  We review and accept thousands of
-patches every year, keeping that rate of change going.
+We have about 3000 different developers.  They make a patch, and send it
+through email to the file/driver maintainer.  We have about 700 different
+maintainers listed in the kernel tree at the moment.  That maintainer
+reviews it, and if they accept it, they forward it on to the subsystem
+maintainer.  We have around 130 different subsystem maintainers at the
+moment.
+
+Those maintainers have public kernel trees that all get merged into the
+linux-next release every day.  Then, when the merge window opens up, the
+subsystem maintainers send their stuff to Linus.
+
+I've been giving this talk, about how our model works, and how to get
+involved in the kernel development process for over 6 years now.  What I've
+not talked about is how the people above the developers work.  What they
+put up with, how they do their job, and what you can do to make their lives
+easier.  So let's talk about that now.
+
+Linus quote:
+
+	Making fun of patches
 
 
-Make it impossible for me to reject your patch.
+Now this is funny, but true.  Really true.  When you send a patch out to
+the world, you need to let go of your ego.  Your code can be critiquied,
+dicussed, rejected, made fun of, and hopefully, accepted.
+
+But why the grumpyness?  Maintainers are grumpy.  I'm grumpy, and let me
+show you exactly why we are.
+
+I looked at the patches that I got in just the past 2 weeks, now this is
+during the middle of the merge window for the kernel, the time when no one
+should be sending me patches.  Because of that, this probably shows a low
+number of patches, as the experienced kernel developers know to not send
+patches during this period.  I also was out of the country, so a number of
+developers knew not to send me stuff.
+
+Even with all of those caviets, I got this many patches in 2 weeks to
+review:
+
+	968 patches in 2 weeks
+
+Now the large majority of these patches are just fine, but still, I
+recieved all of the following problems:
+
+
+ Subject: [PATCH 48/48] ....
+	There was no 47 previous patches
+
+ 15 sequence patch series, with no indication which patch went in which order.
+
+ Patches 1,3-10, #2 never showed up
+
+ Patch with signed-off-by in the signature at the bottom of the patch
+
+ Patch with signature saying "Information in this email is confidential"
+
+ Patches with tabs converted to spaces
+
+ Patches with spaces converted to tabs
+
+ Patches with leading spaces deleted, everything else just fine.
+
+ Patches created with non-unified format
+
+ Patches created in the driver subdirectory, not at the root of the kernel directory
+
+ Patches created at /usr/src/linux-2.6.32/....
+
+ Patches that failed to apply
+
+ Patches that were made against a different subsystem's tree, without telling me
+
+ Patches that broke the build
+
+ Patches that broke the build on patch 3/6 and fixed it on patch 6/6
+
+ Patches that broke the build on patch 5/8 with a note saying a follow-on patch would fix it up
+
+ Patches that had nothing to do with me
+
+ 1 patch that was 145kb big (4500 lines added)
+
+ Patch with obvious wrong kerneldoc format that had never been tested
+
+Remember, this was a calm 2 weeks.
+
+Now, I'm not asking you to take pity on me, just realize that this is the
+level of incompitance that every single one of those 700 developers
+encounter on a consistant basis.
+
+So when you think we are acting grumpy, remember, how would you act if you
+had to deal with this all of the time?
+
+
+Let's get back to what the goal is here.  You want to create a patch that
+is accepted as it does something that you want to do in Linux.  The
+maintainer wants to reject it.
+
+Seriously.  It's easier for the maintainer to not accept your code at all.
+To accept it, it takes time to review it, apply it, send it on up the
+development chain, handle any problems that might happen with the patch,
+accept responsibility for the patch, possibly fix any problems that happen
+later on when you disappear, and maintain it for the next 20 years.
+
+That's a lot of work that you are asking someone else to do on your behalf.
+You are asking someone who doesn't usually work for your company, who
+probably lives in a different country, who you have never met in person, to
+assume responsibility for your work, and to do extra work on top of the
+normal work they do in the kernel every day.
+
+So you can see how it's in my interest to ignore your patch.  And it's in
+your interest to keep me from ignoring it, because you want it accepted.
+
+So your goal is, when sending a patch, is to give me NO excuse to not
+accept it.  To make it such that if I ignore it, or reject it, I am the one
+that is the problem here, not you.
+
+What can you do to keep me from rejecting your patch outright.
+
+First off, don't do any of the things I listed above, that's obvious,
+right?  But that's a "do not do" list, how about a list of what to do:
 
  - proper coding style
  - checkpatch.pl clean
@@ -38,11 +156,22 @@ Make it impossible for me to reject your patch.
  - make sure it works, if possible.
 
 
-What you should expect of a maintainerr
+If you do all of that, here's what I will do for you:
   - respond to the patch in 1-2 weeks (longer if in middle of merge
     window, or if at conferences.)
   - offer constructuve criticism of the patch
+
+If this happens, don't ignore it.  Don't wait 2 weeks to respond, as I will
+have forgotten what I wrote.  Or, don't resend a patch that you think just
+fixed up all of the issues I wrote, without saying what you changed in the
+previous version.
+
+
   - let the author know when the apply the patch, and where it can be found
+
+
+
+
 
 What the author should provide
   - respond to feedback, don't ignore it
@@ -67,3 +196,11 @@ What I do:
 
 All my scripts are public:
 	github /linux tree
+
+
+
+Linus quote "open source allows you to make fun of people"
+
+All the following are patches I got in the past 2 weeks:
+
+
