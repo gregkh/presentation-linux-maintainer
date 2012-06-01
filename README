@@ -2,6 +2,9 @@ This is a repo containing a presentation about Linux kernel maintainers.
 
 It's still under development, it's at the "rant" stage.
 
+Feel free to use the numbers in here in any presentations you wish to
+give, just properly attribute them please.
+
 The presentation is licensed under the Creative Commons
 "Attribution-Noncommercial-ShareAlike" license, version 3.0, that can be
 found in detail at:
@@ -11,4 +14,3 @@ If you have any questions about the information in this presentation,
 please feel free to contact me:
 	Greg Kroah-Hartman
 	greg@kroah.com
-

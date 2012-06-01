@@ -1,0 +1,293 @@
+#!/usr/bin/env pinpoint
+[font="Bitter" 70px]
+[top]
+[text-align=left]
+#[bg.jpg]
+[shading-opacity=0.000000]
+[black]
+
+- [top] [text-align=center][font=FifthLeg 190px]
+<b>
+<span size='xx-large' foreground='white'>Linux Kernel
+Maintainers</span>
+</b>
+<span font="Bitter" foreground='yellow' size='x-small'>Greg Kroah-Hartman</span>
+<span font="Bitter" size='x-small' foreground="yellow">gregkh@linuxfoundation.org</span>
+
+-- [white] [text-color=black]
+<span font="bitter" size="large" >
+2.831 developers
+   320 companies</span>
+
+# number of developers for the past year
+# # of companies is the ones we know, there really are more.
+
+-- [white] [text-align=center] [text-color=black]
+<span font="Bitter">
+foo foo foo
+</span>
+
+# Speaker notes!!!!
+#
+# Given at the openSUSE conference, September 12 2011, Nuremberg Germany.
+
+-- [images/tw.jpg] [text-align=right] [top-right]
+
+# For those who don't know what a tumbleweed is.
+
+-- [white] [text-color=black]
+<span font="bitter" size="large" >
+Linux kernel statistics
+</span>
+
+# All stats are for the 2.6.36 - 3.0 kernels, the last year of development
+
+-- [white] [text-color=black]
+<span font="bitstream charter" size="large" >
+       36.782 files
+14.647.033 lines
+</span>
+
+# still getting bigger
+#
+# Like the dots?  Localization, know your audience.
+
+-- [white] [text-color=black]
+<span font="bitstream charter" size="large" >
+9.900 lines added
+6.800 lines removed
+2.200 lines changed
+</span>
+
+# rate of change per day
+# lots of churn
+
+-- [white] [text-color=black]
+<span font="bitstream charter" size="large" >
+5,8 changes per hour
+</span>
+
+# still going up, but slowing in the growth. 5.5 last year
+#
+# Change is proportional.
+
+
+-- [images/factory.jpg] [text-color=black]
+<span font="bitstream charter" size="xx-large"><b>Who is funding this work</b></span>
+<span font="bitstream charter" size="large"><b>
+1) 				14.1%
+2) Red Hat			11.6%
+3) 				  8.2%
+4) Intel			  6.6%
+5) SuSE			  4.3%
+6) IBM			  3.4%
+7) Texas Instruments	  2.5%
+8) Nokia			  2.0%
+9) Consultants		  1.6%
+10) Broadcom		  1.6%
+</b></span>
+
+# guess who #1 and #3 are
+#
+# No, not Microsoft, they were only #23
+#
+# And no, not Canonical, they were #36
+
+-- [images/factory.jpg] [text-color=black]
+<span font="bitstream charter" size="xx-large"><b>Who is funding this work</b></span>
+<span font="bitstream charter" size="large"><b>
+1) "Amateurs"		14.1%
+2) Red Hat			11.6%
+3) Unknown individuals	  8.2%
+4) Intel			  6.6%
+5) SuSE			  4.3%
+6) IBM			  3.4%
+7) Texas Instruments	  2.5%
+8) Nokia			  2.0%
+9) Consultants		  1.6%
+10) Broadcom		  1.6%
+</b></span>
+
+# Unknown are those we don't know, or those we know and they want to remain unknown.
+#
+# None are major contributors.
+#
+# Why contribute?
+# - paid to do so (or business model, Red Hat, SUSE)
+# - support their hardware (Intel, IBM, TI, Microsoft, etc.)
+# - they rely on Linux, so they contribute to ensure that it doesn't change in ways that would not benefit them (Nokia, Oracle, Google.)
+
+-- [white] [text-color=black]
+<span font="bitstream charter" size="xx-large">
+<b>Where is the roadmap?</b></span>
+
+# everyone wants a roadmap, they are wrong
+
+-- [images/ols_2006_keynote_08.jpg]
+
+# We make changes when they are needed, based on what people implement, not what marketing dreams up would be nice for the next version.
+#
+# We take the changes when they are done, and work.
+#
+# We support more devices, and more processors than any other operating system.
+#
+# We do stuff no operating system ever has.
+#
+# The only one to work on a different major platform from what it originally was designed, we scaled up and down (embedded and supercomputers.)  No one has ever done that.
+
+-- [stretch] [images/ibm-background.jpg] [text-color=black] [text-align=left]
+<span font="bitstream charter" size="large"><b>
+“Linux is the only OS that will
+ run on architectures that haven’t
+ been invented yet”</b></span>
+<span font="bitstream charter"><b>
+	― Dr. Irving Wladawsky-Berger
+</b></span>
+
+# Said this at LinuxCon 2011 in August in Vancouver.
+#
+# Was all about how IBM knows Linux is the future.
+
+-- [stretch] [images/heraclitus-background.png] [text-color=white] [top-right] [text-align=right]
+
+# Greek philosopher
+#
+# Need to embrace the change in order to survive.
+
+-- [stretch] [images/financial-background.png] [text-color=black] [text-align=left]
+<span font="bitstream charter" size="x-large"><b>“Linux took over Wall Street because
+  it moved faster than anyone else.”</b></span>
+<span font="bitstream charter"><b>
+	― lots of financial CIOs
+</b></span>
+
+# lots of these companies roll their own.
+#
+# Etrade and NASDAQ run Gentoo to keep on the leading edge of stuff
+
+-- [white] [text-color=black] [text-align=left]
+<span font="bitstream charter" size="xx-large"><b>Enterprise distros</b></span>
+
+
+<span font="bitstream charter" size="large"><b>
+					
+</b></span>
+
+# Not all companies want change, so Enterprise distros came about to try to sell Linux into those markets.
+#
+# They provide support and a slow moving system for companies that feel they don't like change.
+
+
+-- [white] [text-color=black] [text-align=left]
+<span font="bitstream charter" size="xx-large"><b>Enterprise distros</b></span>
+
+
+<span font="bitstream charter" size="large"><b>
+Duplicating Solaris release model?
+</b></span>
+
+# These distros are embracing the old model which has failed.
+#
+# My own opinion, not that of my employer, yada yada yada
+
+
+-- [white] [text-color=black] [text-align=left]
+<span font="bitstream charter" size="large"><b>
+“It is not necessary to change.
+ Survival is not mandatory.”</b></span>
+<span font="bitstream charter"><b>
+	― W. Edwards Deming
+</b></span>
+
+# Deming helped Japan rebuild after WWII and taught product quality and production techniques using statistical methods.
+#
+# Brought this model back to the US to try to get companies there to adopt it when confronted with control problems.
+#
+# Companies that don't change, will fail, no one guarantees your business model will remain over time.
+
+
+-- [top] [text-align=center]
+<b>
+<span size='large' font="FifthLeg" foreground='green'>Tumbleweed
+</span>
+</b>
+
+# Let's discuss Tumbleweed, what it is, what it is not, and how it works
+#
+# "You are bringing Gentoo to openSUSE"
+
+--
+<span size='large' font="FifthLeg" foreground='green'>Tumbleweed is:</span>
+
+<span font="FifthLeg">openSUSE</span> with the latest stable packages
+
+# that's it.  Quite simple :)
+
+--
+<span size='large' font="FifthLeg" foreground='green'>Tumbleweed is not:</span>
+
+a totally new distro
+
+# really, it isn't.
+
+--
+<span size='large' font="FifthLeg" foreground='green'>Tumbleweed is not:</span>
+
+a replacement for Factory
+
+# packages have to be in factory first, before they get into Tumbleweed.
+
+--
+<span size='large' font="FifthLeg" foreground='green'>Tumbleweed does not:</span>
+
+Replace <span font="FifthLeg">openSUSE</span> releases
+
+# is build on top of the most recent openSUSE release, it relies on this in order to work properly.
+
+--
+<span size='large' font="FifthLeg" foreground='green'>Using Tumbleweed:</span>
+
+Read wiki
+
+# Lots of good documentation, how to add the repo, one-click file, everything you ever wanted, and more.
+
+--
+<span size='large' font="FifthLeg" foreground='green'>Using Tumbleweed:</span>
+
+<tt>zypper dup</tt>
+
+# that's it, nothing complex, nothing fancy.
+#
+# If you do something else, it will break.
+
+--
+<b>No repo priorities</b>
+
+# breaks stuff, don't do it.
+
+--
+<b>How it all works</b>
+
+-- [white] [images/lifecycle-1.png]
+
+-- [white] [images/lifecycle-2.png]
+
+-- [white] [images/lifecycle-3.png]
+
+-- [white] [images/lifecycle-4.png]
+
+-- [white] [images/lifecycle-5.png]
+
+-- [white] [images/lifecycle-6.png]
+
+-- [white] [images/lifecycle-7.png]
+
+--
+<tt>https://github.com/gregkh/tumbleweed</tt>
+
+- [black][images/penguins.jpg][unscaled]
+
+# Everyone likes penguins
+
+#- [black] [font=Sans 100px]
+#ありがとう
