@@ -1,5 +1,5 @@
 #!/usr/bin/env pinpoint
-[font="Bitstream Charter" 70px]
+[font="Bitter" 70px]
 [top]
 [text-align=left]
 #[bg.jpg]
@@ -8,13 +8,24 @@
 
 - [top] [text-align=center][font=FifthLeg 190px]
 <b>
-<span size='large' foreground='green'>openSUSE Tumbleweed</span>
-<span font="bitstream charter bold " size="large">&amp;
-Linux kernel stuff</span>
+<span size='xx-large' foreground='white'>Linux Kernel
+Maintainers</span>
 </b>
+<span font="Bitter" foreground='yellow' size='x-small'>Greg Kroah-Hartman</span>
+<span font="Bitter" size='x-small' foreground="yellow">gregkh@linuxfoundation.org</span>
 
-<span font="Bitstream Charter Bold" foreground='yellow' size='x-small'>Greg Kroah-Hartman</span>
-<span font="Bold" size='xx-small'><tt>gregkh@suse.de</tt></span>
+-- [white] [text-color=black]
+<span font="bitter" size="large" >
+2.831 developers
+   320 companies</span>
+
+# number of developers for the past year
+# # of companies is the ones we know, there really are more.
+
+-- [white] [text-align=center] [text-color=black]
+<span font="Bitter">
+foo foo foo
+</span>
 
 # Speaker notes!!!!
 #
@@ -25,7 +36,7 @@ Linux kernel stuff</span>
 # For those who don't know what a tumbleweed is.
 
 -- [white] [text-color=black]
-<span font="bitstream charter" size="large" >
+<span font="bitter" size="large" >
 Linux kernel statistics
 </span>
 
@@ -60,14 +71,6 @@ Linux kernel statistics
 #
 # Change is proportional.
 
-
--- [white] [text-color=black]
-<span font="bitstream charter" size="large" >
-2.831 developers
-   320 companies</span>
-
-# number of developers for the past year
-# # of companies is the ones we know, there really are more.
 
 -- [images/factory.jpg] [text-color=black]
 <span font="bitstream charter" size="xx-large"><b>Who is funding this work</b></span>
