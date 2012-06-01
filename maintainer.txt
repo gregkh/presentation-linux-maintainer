@@ -28,11 +28,42 @@ Make it impossible for me to reject your patch.
  - small incremental change
  - "obviously" correct
  - good description of WHY the patch is needed
-
+ - tell me which tree it was made against if there is any question
+ - if multiple patches:
+ 	- tell me the ordering
+	- each patch needs to build properly and not break the build at any
+	  step along the way
+ - make sure it applies, with no fuzz.
+ - make sure it builds
+ - make sure it works, if possible.
 
 
 What you should expect of a maintainerr
   - respond to the patch in 1-2 weeks (longer if in middle of merge
     window, or if at conferences.)
   - offer constructuve criticism of the patch
+  - let the author know when the apply the patch, and where it can be found
+
+What the author should provide
+  - respond to feedback, don't ignore it
+  - don't submit and run away
   - 
+
+
+Why I guarantee to you:
+	- I will respond within a week, unless I am traveling or during the merge window
+	- I will email you when the patch goes into my trees, letting you know where it is at
+
+
+What I do:
+	- batch up subsystem patches
+	- pick a few, save in a mbox
+	- review them, if bad, let the author know why and how to fix it, if possible.
+	- edit the headers to fix up typos
+	- make sure they apply with 'patch -p1 --dry-run'
+	- apply to a branch, building after each patch is applied
+	- if all good, merge to my main branch, and send out emails that the patches are applied.
+
+
+All my scripts are public:
+	github /linux tree
