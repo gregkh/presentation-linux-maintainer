@@ -56,7 +56,7 @@ developers knew not to send me stuff.
 Even with all of those caviets, I got this many patches in 2 weeks to
 review:
 
-	968 patches in 2 weeks
+	480 patches in 2 weeks
 
 Now the large majority of these patches are just fine, but still, I
 recieved all of the following problems:
@@ -104,7 +104,7 @@ recieved all of the following problems:
 Remember, this was a calm 2 weeks.
 
 Now, I'm not asking you to take pity on me, just realize that this is the
-level of incompitance that every single one of those 700 developers
+level of incompetence that every single one of those 700 developers
 encounter on a consistant basis.
 
 So when you think we are acting grumpy, remember, how would you act if you
