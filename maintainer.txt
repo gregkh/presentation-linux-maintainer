@@ -36,7 +36,12 @@ easier.  So let's talk about that now.
 
 Linus quote:
 
-	Making fun of patches
+	Publicly making fun of people is half the fun of open source
+	programming.
+
+	In fact, the real reason to eschew programming in closed
+	environments is that you can't embarrass people in public.
+
 
 
 Now this is funny, but true.  Really true.  When you send a patch out to
