@@ -90,6 +90,10 @@ recieved all of the following problems:
 
  Patches created at /usr/src/linux-2.6.32/....
 
+ Wrong coding style
+
+ Wrong coding style, and acknowledged it
+
  Patches that failed to apply
 
  Patches that were made against a different subsystem's tree, without telling me
@@ -159,6 +163,8 @@ right?  But that's a "do not do" list, how about a list of what to do:
  - make sure it applies, with no fuzz.
  - make sure it builds
  - make sure it works, if possible.
+ - don't ignore comments
+ - don't resend without saying why you are resending the patch
 
 
 If you do all of that, here's what I will do for you:
