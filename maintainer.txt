@@ -1,19 +1,69 @@
-Kernel maintainers - what they do, want, etc...
+Linux Kernel maintainers - Why are they so gumpy?
+
+When I first started writing this talk, it quickly turned into one big long
+rant.  I ended up listing all of the different problems that I had with
+patches that people had sent me over the past few years.
+
+While this would have been a very fun and cathartic talk for me, I figured
+that you all just watching me complain for 30 minutes wouldn't be the most
+intertaining thing, so I figured I would try to tone it down.
+
+----------
+
+So, let's talk about the main problem that people seem to have with Linux
+kernel maintainers, why are they so grumpy?  Hopefully by the end of this
+talk, you will have an idea of why this always happens, and what you can do
+to avoid having that anger be directed at you.
+
+Also, I'm going to cover what you should expect from a good kernel
+maintainer, so if you are a maintainer, here's something that developers
+can use to get back at you, and me, as I figure it's only fair.
+
+I am going to complain a lot in this talk.  Please don't get the impression
+that I don't like doing this type of work.  I love it.  It's the best job
+in the world that I've ever had, and I can't think of anything that I would
+rather be doing.
 
 
-Last year, from the 3.0 to the 3.4 kernel release, the Linux kernel had we had
-2,833 developers from 373 different companies.
+---------
 
-For that year work of development, we went at 5.xx changes per hour, 24
-hours a day, 7 days a week.
+	2,833 developers
+	373 companies
 
-For just this last release, we applied patches at an average of 7.21 changes
-per hour, the fastest rate of change we have ever had.
 
-That's a huge rate of change, and this is just the number of patches we
-have applied, not all of the patches that are rejected.  And if you have
-ever submitted a kernel patch, you know how hard it can be to get a patch
-accepted.
+This makes the Linux kernel the largest contributed body of software
+that has ever been created.
+
+This is also the number of companies that we know about.  There are more
+that we do not know of at the moment, as I haven't been keeping up to
+date with tracking some of these numbers over the past 2 kernel
+releases.  So the number really is a bit bigger than this.
+
+---------
+
+	5.79 changes per hour
+
+For that year of development, we went at this rate, 24 hours a day, 7 days
+a week.  This is up from last year, which was at 5.2 or so, so we are
+increasing, which is scary, right?
+
+---------
+
+	7.21 changes per hour
+
+	3.4.0 release
+
+This past 3.4 release was the fastest we have ever created.  That number
+shows just how well the Linux kernel development model is working.  We are
+growing in developers and in how fast we are developing overall.
+
+Now this is just the patches we accepted, not all of the patches that have
+been submitted, lots of patches are rejected, as anyone who has ever tried
+to submit a patch can attest to.
+
+---------
+
+	[Development model picture]
 
 Here's a picture of our development model, in a simplified form.
 
@@ -28,89 +78,211 @@ Those maintainers have public kernel trees that all get merged into the
 linux-next release every day.  Then, when the merge window opens up, the
 subsystem maintainers send their stuff to Linus.
 
-I've been giving this talk, about how our model works, and how to get
-involved in the kernel development process for over 6 years now.  What I've
-not talked about is how the people above the developers work.  What they
-put up with, how they do their job, and what you can do to make their lives
-easier.  So let's talk about that now.
+---------
 
-Linus quote:
+	Patches I received in the past 2 weeks
 
-	Publicly making fun of people is half the fun of open source
-	programming.
+So, let's look at one of these subsystem maintainers.  I maintain the USB,
+driver core, tty, staging, and a few other various parts of the Linux
+kernel.
 
-	In fact, the real reason to eschew programming in closed
-	environments is that you can't embarrass people in public.
+These past 2 weeks is the timeframe when we had our big merge window, when
+all of the subsystem maintainers sent patches off to Linus.  During this
+time frame, no core kernel developer sends new stuff to subsystem
+maintainers, as they know they are busy, and nothing that gets sent can
+really be looked at until after the merge window closes.
 
+So, almost all of the patches I got in the past 2 weeks were not from
+developers that do a whole lot of kernel work, nor were the, for the most
+part, large patches with new things being proposed for the kernel.
 
+---------
 
-Now this is funny, but true.  Really true.  When you send a patch out to
-the world, you need to let go of your ego.  Your code can be critiquied,
-dicussed, rejected, made fun of, and hopefully, accepted.
+	Patches I received in the past 2 weeks
 
-But why the grumpyness?  Maintainers are grumpy.  I'm grumpy, and let me
-show you exactly why we are.
+	487
 
-I looked at the patches that I got in just the past 2 weeks, now this is
-during the middle of the merge window for the kernel, the time when no one
-should be sending me patches.  Because of that, this probably shows a low
-number of patches, as the experienced kernel developers know to not send
-patches during this period.  I also was out of the country, so a number of
-developers knew not to send me stuff.
+Yeah, that's the number of patches I got during the "slow" period of the
+kernel development cycle.  This does not include the number of messages
+around those patches as other developers commented on them, or other
+various things about those patches (like "have you applied my patch yet?"
+messages.)
 
-Even with all of those caviets, I got this many patches in 2 weeks to
-review:
+Now the large majority of these patches at first glance look just fine.
+But I took a closer look at them, and here's a short list of the problems
+in the patches that were sent to me.
 
-	480 patches in 2 weeks
+---------
 
-Now the large majority of these patches are just fine, but still, I
-recieved all of the following problems:
+	Subject: [PATCH 48/48] ....
 
+There were no 47 previous patches
 
- Subject: [PATCH 48/48] ....
-	There was no 47 previous patches
+---------
 
- 15 sequence patch series, with no indication which patch went in which order.
+	15 sequence patch series, no order given.
 
- Patches 1,3-10, #2 never showed up
+Am I just supposed to guess?
 
- Patch with signed-off-by in the signature at the bottom of the patch
+---------
 
- Patch with signature saying "Information in this email is confidential"
+	Patches 1,3-10, #2 never showed up
 
- Patches with tabs converted to spaces
+---------
 
- Patches with spaces converted to tabs
+	"Signed-off-by:" in signature
 
- Patches with leading spaces deleted, everything else just fine.
+This would require me to edit the patch by hand before I applied it.
 
- Patches created with non-unified format
+---------
 
- Patches created in the driver subdirectory, not at the root of the kernel directory
+	Signature saying email was confidential
 
- Patches created at /usr/src/linux-2.6.32/....
+That kind of goes against how you are supposed to be sending Linux kernel
+patches out to the world.
 
- Wrong coding style
+---------
 
- Wrong coding style, and acknowledged it
+	Tabs converted to spaces
 
- Patches that failed to apply
+This makes applying the patch impossible.
 
- Patches that were made against a different subsystem's tree, without telling me
+Exchange does this for you, if you are working for a corporation that has
+an Exchange server, do what IBM, Intel, and Microsoft have done in order to
+be able to contribute to Linux kernel development, have a Linux box
+somewhere in the corner that your developers use as a mail server to send
+patches out from.
 
- Patches that broke the build
+Huawei is the only company that I know of that successfully sends kernel
+patches through an Exchange server, which is amazing, I really don't know
+how they do it.
 
- Patches that broke the build on patch 3/6 and fixed it on patch 6/6
+---------
 
- Patches that broke the build on patch 5/8 with a note saying a follow-on patch would fix it up
+	Leading spaces removed
 
- Patches that had nothing to do with me
+This also makes applying the patch impossible.  I end up editing a lot of
+patches by hand, cursing all the while, just to get them to apply because
+of broken email servers and clients.
 
- 1 patch that was 145kb big (4500 lines added)
+---------
 
- Patch with obvious wrong kerneldoc format that had never been tested
+	diff in non-unified format
 
-Remember, this was a calm 2 weeks.
+I honestly didn't know that diff could still create output in this format
+anymore, I assumed that as no one ever found it useful, it wasn't used
+anymore.
+
+---------
+
+	patch created in the driver directory
+
+Patches need to be created in the root of the kernel source tree, as that's
+where I have to be in order to apply them properly.
+
+This seems to happen a lot to first-time patch submitters, it's a very
+common problem.
+
+---------
+
+	patch created at /usr/src/linux-2.6.32/
+
+How many different problems can you see here in just this one example?
+
+Old and obsolete kernel version, full path to root, developer doing kernel
+work as root, probably more.
+
+---------
+
+	Made against different tree
+
+Someone made a patch against the scsi subsystem development tree when
+sending me a USB patch.  Why they thought that was a good idea I have no
+idea.
+
+---------
+
+	Wrong coding style
+
+There's no excuse for doing something like this anymore, we have automated
+tools that fix this up for you.
+
+---------
+
+	Wrong coding style, and acknowledged it
+
+At least in this patch, the author knew they were doing something wrong,
+it's just that they thought they were more important than the 3000 other
+kernel developers and didn't have to play by the rules of everyone else.
+
+---------
+
+	Would not compile
+
+Just looking at the patch it was obvious that it had never been compiled,
+and sure enough, the compiler spit out a bunch of warnings.
+
+---------
+
+	Broke the build on patch 3/6
+
+This was a series of patches, and the build broke on the 3rd patch that was
+applied.
+
+---------
+
+	Broke the build on patch 3/6
+	and fixed it on patch 6/6
+
+But, I looked closer, and the developer at least realized this, and fixed
+it in their last patch in the series, thinking that all was now good, as it
+didn't really matter that for the past 3 patches, the build was broken.
+
+---------
+
+	Broke the build on patch 5/8
+
+There was another series that also broke the build in the series.
+
+---------
+
+	Broke the build on patch 5/8
+	Contained note that fix would be sent later.
+
+But this one was better, it had a note saying that they knew the build was
+broken, and they would fix it up later, at some unknown time in the future,
+but these 8 patches should be accepted now anyway.
+
+---------
+
+	Patches that had nothing to do with me.
+
+Now I know I apply a lot of patches to lots of different parts of the
+kernel, but for some reason someone sent me a patch for the x86 core code,
+copied to no one else, thinking that I was the one that could accept it.
+
+---------
+
+	1 patch that was 145kb big (4500 lines added)
+
+Luckily, another developer told the author that this was too big and needed
+to be broken up into smaller pieces before anyone would review it.  And
+then, three different developers went and reviewed it anyway, so I don't
+think the author learned that lesson at all.
+
+---------
+
+	Obviously wrong kerneldoc
+
+kerneldoc is the format that you can write comments in the code and get
+them included in the kernel api documentation that is automatically
+generated.  When you get the format of it wrong, the tools will tell you.
+Here was someone who was trying to write documentation, but got the format
+wrong, and hadn't even run the tools to see if it was generated properly.
+
+---------
+
+	This was a calm 2 weeks.
 
 Now, I'm not asking you to take pity on me, just realize that this is the
 level of incompetence that every single one of those 700 developers
@@ -180,6 +352,45 @@ previous version.
 
   - let the author know when the apply the patch, and where it can be found
 
+
+---------
+
+Linus quote:
+
+	Publicly making fun of people is half the fun of open source
+	programming.
+
+	In fact, the real reason to eschew programming in closed
+	environments is that you can't embarrass people in public.
+
+Linus said this after I wrote a small rant about some truly horrible
+Linux kernel driver code that I found online.
+It had all sorts of "this code is never to be included in the Linux
+kernel" warnings all over it, despite it being a Linux kernel driver.
+And in reading the code, it was obvious why the author never wanted it
+in the kernel, it was one of the worse things I had ever seen, and that
+says a lot.  After I complained about it, I felt bad, as someone had
+obviously spent a lot of time on it, but Linus replied with the above
+quote.
+
+And as always, it turns out that Linus is right.
+
+If this author had ever thought that the code would have been posted
+publicly, they wouldn't have written such crap.  That's what maintainers
+and public code review is really for in the end, keeping the crap out of
+the Linux kernel, which benifits everyone involved, most importantly,
+you.
+
+So while it seems that we kernel developers can be a real harsh
+bunch of people, it is because of that harshness that Linux is as good
+as it is.
+
+You want us to be tough, because it makes you better programmers in the
+end, knowing you will have to defend your code.  This is what has made
+Linux so good, and is what will keep it being so good in the future.
+
+So be kind to maintainers, would you want to put up with the crap that
+you send them all the time? 
 
 
 
