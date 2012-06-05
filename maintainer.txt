@@ -212,7 +212,7 @@ tools that fix this up for you.
 	Wrong coding style, and acknowledged it
 
 At least in this patch, the author knew they were doing something wrong,
-it's just that they thought they were more important than the 3000 other
+It's just that they thought they were more important than the 3000 other
 kernel developers and didn't have to play by the rules of everyone else.
 
 ---------
@@ -220,7 +220,7 @@ kernel developers and didn't have to play by the rules of everyone else.
 	Would not compile
 
 Just looking at the patch it was obvious that it had never been compiled,
-and sure enough, the compiler spit out a bunch of warnings.
+and sure enough, the compiler spit out a bunch of errors.
 
 ---------
 
@@ -242,7 +242,7 @@ didn't really matter that for the past 3 patches, the build was broken.
 
 	Broke the build on patch 5/8
 
-There was another series that also broke the build in the series.
+There was another patch series that also broke the build in the middle of it.
 
 ---------
 
@@ -257,9 +257,9 @@ but these 8 patches should be accepted now anyway.
 
 	Patches that had nothing to do with me.
 
-Now I know I apply a lot of patches to lots of different parts of the
-kernel, but for some reason someone sent me a patch for the x86 core code,
-copied to no one else, thinking that I was the one that could accept it.
+Now I know I maintain a lot of different parts of the kernel, but for some
+reason someone sent me a patch for the x86 core code, copied to no one
+else, thinking that I was the one that could accept it.
 
 ---------
 
@@ -277,6 +277,7 @@ think the author learned that lesson at all.
 kerneldoc is the format that you can write comments in the code and get
 them included in the kernel api documentation that is automatically
 generated.  When you get the format of it wrong, the tools will tell you.
+
 Here was someone who was trying to write documentation, but got the format
 wrong, and hadn't even run the tools to see if it was generated properly.
 
@@ -285,8 +286,8 @@ wrong, and hadn't even run the tools to see if it was generated properly.
 	This was a calm 2 weeks.
 
 Now, I'm not asking you to take pity on me, just realize that this is the
-level of incompetence that every single one of those 700 developers
-encounter on a consistant basis.
+level of incompetence that every single one of those 700 maintainers
+encounter all the time.
 
 So when you think we are acting grumpy, remember, how would you act if you
 had to deal with this all of the time?
@@ -376,9 +377,10 @@ Use it.
 
 	Proper Subject:
 
-Make the subject of your patch something that makes sense.  Don't me a 20
-patch series that for every individual patch says, "Fixes problems in
-driver" like some people have done in the past.
+Make the subject of your patch something that makes sense.
+
+Don't send me a 20 patch series that for every individual patch says,
+"Fixes problems in driver" like some people have done in the past.
 
 ---------
 
@@ -402,6 +404,7 @@ or not.
 
 Patches are not supposed to be big huge rewrites of things.  That's not how
 we do development.  You need to make each patch a small one-item change.
+
 Break your larger change up into a set of small, individual, steps.  Like
 your math professor said, "show your work".  We want to see all the steps
 you make along the way to complete your larger goal.
@@ -421,8 +424,9 @@ do that in the past, how stupid we never did this before!"
 
 If you create a patch against a different development tree than the person
 you are sending it to, let them know.  If you made it against an obsolete
-vendor enterprise kernel release, tell them.  Don't make them guess.  If
-you make me guess, I will guess wrong, that's just the way it goes.
+vendor enterprise kernel release, tell them.  Don't make them guess.
+
+If you make me guess, I will guess wrong, that's just the way it goes.
 
 ---------
 
@@ -450,7 +454,7 @@ you send me in the future, as you are just wasting my time.
 
 If you have the hardware, test the patch.  Now that isn't always possible,
 and that's fine, we make changes to drivers for hardware that we don't have
-access to all the time, which seems to supprise a lot of people.
+access to all the time, which seems to surprise a lot of people.
 
 Go back to that "obviously correct" item, if you don't have the hardware,
 stick to that rule and you will be fine.
@@ -461,11 +465,14 @@ stick to that rule and you will be fine.
 
 Lots of time I see patches sent out on Friday afternoon, and then the
 author disappears on a 2 week vacation.  So, when I spend the time
-reviewing the patches, I get back a vacation bounce message.  And, if the
-email does go through, don't ignore it.  Acknowledge it, either agreeing or
-pushing back on the comments.  If you don't acknowledge the effort I just
-spent in reviewing your submission, that will make me very unlikely to ever
-want to review it again in the future.
+reviewing the patches, I get back a vacation bounce message.
+
+And, if the email does go through, don't ignore it.  Acknowledge it, either
+agreeing or pushing back on the comments.
+
+If you don't acknowledge the effort I just spent in reviewing your
+submission, that will make me very unlikely to ever want to review it again
+in the future.
 
 ---------
 
@@ -481,7 +488,7 @@ about your specific patch, so don't assume that I do.
 
 	What I will do for you:
 
-So, finally, you created the perfict patch series, took all review into
+So, finally, you created the perfect patch series, took all review into
 account, and sent it correctly, without corrupting the patch.  What should
 you expect from me, the subsystem maintainer?
 
@@ -550,7 +557,7 @@ quote.
 
 And as always, it turns out that Linus is right.
 
-If this author had ever thought that the code would have been posted
+If that author had ever thought that the code would have been posted
 publicly, they wouldn't have written such crap.  That's what maintainers
 and public code review is really for in the end, keeping the crap out of
 the Linux kernel, which benefits everyone involved.
