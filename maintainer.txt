@@ -1,4 +1,4 @@
-Linux Kernel maintainers - Why are they so gumpy?
+Linux Kernel maintainers
 
 When I first started writing this talk, it quickly turned into one big long
 rant.  I ended up listing all of the different problems that I had with
@@ -6,7 +6,7 @@ patches that people had sent me over the past few years.
 
 While this would have been a very fun and cathartic talk for me, I figured
 that you all just watching me complain for 30 minutes wouldn't be the most
-intertaining thing, so I figured I would try to tone it down.
+entertaining thing, so I figured I would try to tone it down.
 
 ----------
 
@@ -122,7 +122,7 @@ There were no 47 previous patches
 
 	15 sequence patch series, no order given.
 
-Am I just supposed to guess?
+Am I supposed to guess?
 
 ---------
 
