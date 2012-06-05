@@ -291,13 +291,16 @@ encounter on a consistant basis.
 So when you think we are acting grumpy, remember, how would you act if you
 had to deal with this all of the time?
 
-
 Let's get back to what the goal is here.  You want to create a patch that
 is accepted as it does something that you want to do in Linux.  The
 maintainer wants to reject it.
 
-Seriously.  It's easier for the maintainer to not accept your code at all.
-To accept it, it takes time to review it, apply it, send it on up the
+---------
+
+	It is in my self-interest to ignore your patch
+
+Seriously.  It's easier for the me to not accept your code at all.  To
+accept it, it takes time to review it, apply it, send it on up the
 development chain, handle any problems that might happen with the patch,
 accept responsibility for the patch, possibly fix any problems that happen
 later on when you disappear, and maintain it for the next 20 years.
@@ -311,6 +314,10 @@ normal work they do in the kernel every day.
 So you can see how it's in my interest to ignore your patch.  And it's in
 your interest to keep me from ignoring it, because you want it accepted.
 
+---------
+
+	Give me no excuse to reject your patch
+
 So your goal is, when sending a patch, is to give me NO excuse to not
 accept it.  To make it such that if I ignore it, or reject it, I am the one
 that is the problem here, not you.
@@ -320,38 +327,205 @@ What can you do to keep me from rejecting your patch outright.
 First off, don't do any of the things I listed above, that's obvious,
 right?  But that's a "do not do" list, how about a list of what to do:
 
- - proper coding style
- - checkpatch.pl clean
- - proper people and mailing lists cc:ed (get_maintainer.pl)
- - proper subject
- - small incremental change
- - "obviously" correct
- - good description of WHY the patch is needed
- - tell me which tree it was made against if there is any question
- - if multiple patches:
- 	- tell me the ordering
-	- each patch needs to build properly and not break the build at any
-	  step along the way
- - make sure it applies, with no fuzz.
- - make sure it builds
- - make sure it works, if possible.
- - don't ignore comments
- - don't resend without saying why you are resending the patch
+
+---------
+
+	Proper coding style
+
+This is documented, there should not be any reason to ever get this wrong.
+Or to think that you are above following the rules, that's just asking for
+the patch to be rejected.
+
+---------
+
+	scripts/checkpatch.pl clean
+
+We even have a tool that automatically checks your patch to ensure that you
+got the coding style correct, and that other common problems are avoided.
+
+If you don't run this tool, the maintainer will, and will get mad when it
+finds problems that you should have solved before sending it to them.
+
+---------
+
+	Sent to proper people and lists
+
+I have an email bot that if you ever send a patch to only me, and not any
+mailing list, instantly rejects it and tells you to resend it and copy the
+proper people and mailing lists.
+
+Linux kernel development is done in public, not private, and it doesn't
+scale to send patches or emails to only individual developers.  We all have
+subsystem-specific mailing lists, use them, that way other people can
+review your patches, and comment on them, and you don't overburden the
+individual subsystem maintainers any more than they already are.
+
+---------
+
+	Sent to proper people and lists
+
+	scripts/get_maintainer.pl
+
+Look, we even have a tool that you run on your patch, and it digs through
+the MAINTAINERS file and the git history, and figures out who to send the
+patch to, and what mailing lists to copy at the same time.
+
+Use it.
+
+---------
+
+	Proper Subject:
+
+Make the subject of your patch something that makes sense.  Don't me a 20
+patch series that for every individual patch says, "Fixes problems in
+driver" like some people have done in the past.
+
+---------
+
+	Proper changelog comment
+
+In the body of the email, describe the patch, what it does.  And most
+importantly:
+
+---------
+
+	Description of WHY it is needed
+
+Too many times we see patches that say exactly what the patch does.  Which
+is stupid because we know how to read code, what we want to know is why the
+change is being made, and from that we can determine if it really is needed
+or not.
+
+---------
+
+	Small incremental change
+
+Patches are not supposed to be big huge rewrites of things.  That's not how
+we do development.  You need to make each patch a small one-item change.
+Break your larger change up into a set of small, individual, steps.  Like
+your math professor said, "show your work".  We want to see all the steps
+you make along the way to complete your larger goal.
 
 
-If you do all of that, here's what I will do for you:
-  - respond to the patch in 1-2 weeks (longer if in middle of merge
-    window, or if at conferences.)
-  - offer constructuve criticism of the patch
+---------
 
-If this happens, don't ignore it.  Don't wait 2 weeks to respond, as I will
-have forgotten what I wrote.  Or, don't resend a patch that you think just
-fixed up all of the issues I wrote, without saying what you changed in the
-previous version.
+	"obviously" correct
+
+Make it the patch is so simple and obvious that I would be foolish to
+reject it.  I need to read it and say, "of course, I can't belive we didn't
+do that in the past, how stupid we never did this before!"
+
+---------
+
+	Which tree it was made against
+
+If you create a patch against a different development tree than the person
+you are sending it to, let them know.  If you made it against an obsolete
+vendor enterprise kernel release, tell them.  Don't make them guess.  If
+you make me guess, I will guess wrong, that's just the way it goes.
+
+---------
+
+	If multiple patches, state the order
+
+Number your patches, don't rely on my email client receiving them in the
+same order that you sent them in.  I guarantee that will not happen
+properly.
+
+git send-email does this correctly for you, use that to send your patches
+out.
+
+---------
+
+	Has to build properly
+
+At least build the change before you send it to me.  Because if it breaks
+the build, it just makes me more likely to not want to apply anything else
+you send me in the future, as you are just wasting my time.
 
 
-  - let the author know when the apply the patch, and where it can be found
+---------
 
+	Make sure it works, if possible
+
+If you have the hardware, test the patch.  Now that isn't always possible,
+and that's fine, we make changes to drivers for hardware that we don't have
+access to all the time, which seems to supprise a lot of people.
+
+Go back to that "obviously correct" item, if you don't have the hardware,
+stick to that rule and you will be fine.
+
+---------
+
+	Don't ignore review comments
+
+Lots of time I see patches sent out on Friday afternoon, and then the
+author disappears on a 2 week vacation.  So, when I spend the time
+reviewing the patches, I get back a vacation bounce message.  And, if the
+email does go through, don't ignore it.  Acknowledge it, either agreeing or
+pushing back on the comments.  If you don't acknowledge the effort I just
+spent in reviewing your submission, that will make me very unlikely to ever
+want to review it again in the future.
+
+---------
+
+	Don't resend without saying why
+
+If you take my review comments, and resend the patch, and don't say what
+you did different from the first patch submission, I'll think that you just
+ignored everything that I said in the past and just delete the patch from
+my mailbox.  Based on the patch load I get, I can't remember what I wrote
+about your specific patch, so don't assume that I do.
+
+---------
+
+	What I will do for you:
+
+So, finally, you created the perfict patch series, took all review into
+account, and sent it correctly, without corrupting the patch.  What should
+you expect from me, the subsystem maintainer?
+
+
+---------
+	Review your patch within 1-2 weeks
+
+Some subsystem maintainers try to get to patches even faster than this, but
+with travel and different conferences, the best that I can normally do is
+about 1-2 weeks.
+
+If I don't respond in that time frame, just ask what is going on.  I have
+no problem with people asking about their patch status.  Sometimes patches
+end up getting dropped on the floor accidentally, and if I'm being slow I
+have no problem with being called on it, so don't feel bad about checking
+up on it.
+
+But please wait 1-2 weeks, don't be rude and send a patch at night, and
+then in the morning send a complaining email asking why it wasn't reviewed
+already.  This happens more than you want to know.
+
+---------
+	Offer semi-constructive criticism
+
+I can't always promise constructive criticism, but I'll try my best.
+
+---------
+	Let you know the status of your patch
+
+I have a set of scripts that I got from Andrew Morton that will email you
+when I apply your patch to one of my development trees saying where it has
+been applied and when you can expect to see it show up in Linus's tree.
+There is no reason that all kernel maintainers shouldn't do this, and it's
+nice to see that more and more are.
+
+But, I know from personal experience, there are maintainers in this room
+today that I send patches to and I never know what happens to them.  A few
+months later I will see them show up in Linus's tree, usually after I
+forgot about them.
+
+That's not acceptable, and you should not allow this, push back on your
+subsystem maintainer to use something like this, to keep you informed.
+Andrew's scripts are public, as are my variations of them, for everyone to
+use.
 
 ---------
 
@@ -365,6 +539,7 @@ Linus quote:
 
 Linus said this after I wrote a small rant about some truly horrible
 Linux kernel driver code that I found online.
+
 It had all sorts of "this code is never to be included in the Linux
 kernel" warnings all over it, despite it being a Linux kernel driver.
 And in reading the code, it was obvious why the author never wanted it
@@ -378,51 +553,14 @@ And as always, it turns out that Linus is right.
 If this author had ever thought that the code would have been posted
 publicly, they wouldn't have written such crap.  That's what maintainers
 and public code review is really for in the end, keeping the crap out of
-the Linux kernel, which benifits everyone involved, most importantly,
-you.
+the Linux kernel, which benefits everyone involved.
 
-So while it seems that we kernel developers can be a real harsh
-bunch of people, it is because of that harshness that Linux is as good
-as it is.
+So while it seems that we kernel developers can be a real harsh bunch of
+people, it is because of that harshness that Linux is as good as it is.
 
 You want us to be tough, because it makes you better programmers in the
-end, knowing you will have to defend your code.  This is what has made
-Linux so good, and is what will keep it being so good in the future.
+end, knowing you will have to defend your code.
 
-So be kind to maintainers, would you want to put up with the crap that
-you send them all the time? 
-
-
-
-
-What the author should provide
-  - respond to feedback, don't ignore it
-  - don't submit and run away
-  - 
-
-
-Why I guarantee to you:
-	- I will respond within a week, unless I am traveling or during the merge window
-	- I will email you when the patch goes into my trees, letting you know where it is at
-
-
-What I do:
-	- batch up subsystem patches
-	- pick a few, save in a mbox
-	- review them, if bad, let the author know why and how to fix it, if possible.
-	- edit the headers to fix up typos
-	- make sure they apply with 'patch -p1 --dry-run'
-	- apply to a branch, building after each patch is applied
-	- if all good, merge to my main branch, and send out emails that the patches are applied.
-
-
-All my scripts are public:
-	github /linux tree
-
-
-
-Linus quote "open source allows you to make fun of people"
-
-All the following are patches I got in the past 2 weeks:
-
+And that is why I love doing this work, it makes everyone involved produce
+the best possible code, which in the end, is what matters the most.
 
