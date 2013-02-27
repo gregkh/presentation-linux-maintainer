@@ -1,0 +1,48 @@
+Why I don't want your code
+
+or
+Linux Kernel maintainers, why are they so grumpy?
+
+Here's the Linux kernel development process.
+
+Patches flow from developers through maintainers, up to subsystem
+maintainers, then to Linus for a release.
+
+This is well known, and we have a lot of people contributing to Linux:
+	big numbers go here
+
+but what is a maintainer?
+
+Maintainers are like editors in the publishing industry.  They work with
+developers to review, edit, suggest, reject, and accept their patches.
+Every once in a while, maintainers get to go back to doing what they
+love to do, i.e. be a developer.
+
+So, usually, if you waste a maintainer's time, you make them upset as
+they could be doing more productive things, like new development of
+their own, or accepting patches from other people that aren't wasting
+their time.
+
+How do you waste a maintainer's time?
+
+- don't follow the documented submitsion process
+
+Here's a list of some of the things that people sent me, in a span of
+two weeks, that were wrong and they should have never sent:
+  - patch [48/48] where there were no 47 other patches
+  - 15 patches in a series with no order given
+  - patch 1, 3-10, number 2 never showed up
+  ..... (steal from other talk)
+
+These were obvious things.
+
+It is in my self-interest to ignore your patch
+
+So, what to do about this:
+
+give me no excuse to reject your patch
+  ... steal from other talk...
+
+
+
+
