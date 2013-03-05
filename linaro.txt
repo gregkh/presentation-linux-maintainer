@@ -34,6 +34,26 @@ two weeks, that were wrong and they should have never sent:
   - patch 1, 3-10, number 2 never showed up
   ..... (steal from other talk)
 
+
+List of things from one Linaro developer sent me over the past month:
+  - 10 patch series with one sentance description for the whole series, saying what it did, but no idea why it is needed.
+  - half of the patches didn't even build
+  - 
+  - second round of 10 patch series with no description as to what changed
+  - random patches sent that replaced individual patches in this series, with no numbering as to which one it was
+  - third resend of patches without any ordering specified
+  - fourth resend of patches, described as second version.
+  - insisted that two of these patches HAD to be applied for 3.9-rc1
+  - I applied them based on someone's comments I trusted.
+  - required follow-on patch to actually work properly
+  - subsystem maintainer returned from vacation, noticed the patches did not
+    work at all, I had to revert all 3 1 day before 3.9-rc1 merge window opened up.
+
+- End result, I will not accept patches from this developer at all.
+
+- 
+
+
 These were obvious things.
 
 It is in my self-interest to ignore your patch
